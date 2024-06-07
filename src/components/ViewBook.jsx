@@ -1,7 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './Navbar'
 
 const ViewBook = () => {
+
+    const [data,changeData]=useState(
+
+[
+        { "title":"animal" , "auth":"anu" , "pubyear":1999 , "price":130},
+        { "title":"wings" , "auth":"sana" , "pubyear":2001, "price":99},
+        { "title":"sleep" , "auth":"senu" , "pubyear":2020 , "price":30},
+        { "title":"IF" , "auth":"kipling" , "pubyear":2024 , "price":50},
+        { "title":"Sorry" , "auth":"mary" , "pubyear":2002 , "price":99},
+        { "title":"Midnight" , "auth":"ria" , "pubyear":2003 , "price":299},
+        { "title":"Twilight" , "auth":"vinu" , "pubyear":2004 , "price":300},
+
+
+
+
+]
+
+
+
+    )
+
+
     return (
         <div>
 <Navbar/>
@@ -25,55 +47,29 @@ const ViewBook = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th>The Alchemist</th>
-                                            <td>Paulo Coelho</td>
-                                            <td>1988</td>
-                                            <td>200/-</td>
-                                        </tr>
-                                        <tr>
-                                            <th>The Alchemist</th>
-                                            <td>Paulo Coelho</td>
-                                            <td>1988</td>
-                                            <td>200/-</td>
-                                        </tr>
-                                        <tr>
-                                            <th>The Alchemist</th>
-                                            <td>Paulo Coelho</td>
-                                            <td>1988</td>
-                                            <td>200/-</td>
-                                        </tr>
-                                        <tr>
-                                            <th>The Alchemist</th>
-                                            <td>Paulo Coelho</td>
-                                            <td>1988</td>
-                                            <td>200/-</td>
-                                        </tr>
-                                        <tr>
-                                            <th>The Alchemist</th>
-                                            <td>Paulo Coelho</td>
-                                            <td>1988</td>
-                                            <td>200/-</td>
-                                        </tr>
-                                        <tr>
-                                            <th>The Alchemist</th>
-                                            <td>Paulo Coelho</td>
-                                            <td>1988</td>
-                                            <td>200/-</td>
-                                        </tr>
-                                        <tr>
-                                            <th>The Alchemist</th>
-                                            <td>Paulo Coelho</td>
-                                            <td>1988</td>
-                                            <td>200/-</td>
-                                        </tr>
-                                        <tr>
-                                            <th>The Alchemist</th>
-                                            <td>Paulo Coelho</td>
-                                            <td>1988</td>
-                                            <td>200/-</td>
+
+
+                                    {data.map(
+
+                                        (value,index) => {
+
+                                           return <tr>
+                                            <th>{value.title}</th>
+                                            <td>{value.auth}</td>
+                                            <td>{value.pubyear}</td>
+                                            <td>{value.price}</td>
                                         </tr>
 
+
+
+                                        }
+
+                                    )}
+
+
+                                      
+
+                                        
                                     </tbody>
                                 </table>
 
